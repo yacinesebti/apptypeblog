@@ -1,0 +1,29 @@
+<div [ngClass]="{'panel panel-default': true,
+                'panel panel-light': postLoveIts == 0,
+                'panel panel-success': postLoveIts > 0,
+                'panel panel-danger': postLoveIts < 0 }">
+    <div class="panel-heading">
+    <div class="row">
+    <div class="col-xs-7 col-md-7"><h4>{{ postTitle }} </h4></div>
+    <div class="col-xs-5 col-md-5"><p class="text-right">Le {{ postCreated_at | date: 'd MMM y' | uppercase }}</p></div>
+    </div>
+    </div>
+
+  <div class="panel-body">
+    <div class="row">
+
+    <div class="col-xs-12 col-md-12"><p>{{ postContent }}</p></div>
+    <div class="col-xs-2 col-md-2">
+    <button class="btn btn-success"
+              (click)="onLove()">J'aime</button>
+    </div>
+    <div class="col-xs-3 col-md-3">
+    <button class="btn btn-danger"
+              (click)="onUnlove()">Je n'aime pas</button>
+    </div>
+    <div class="col-xs-6 col-md-6">
+    <div class="text-right">Aimé : {{ postLoveIts }} fois</div>
+    </div>
+  </div>
+  </div>
+</div>
